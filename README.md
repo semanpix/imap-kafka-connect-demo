@@ -1,12 +1,15 @@
 # Example Kafka Source Connector
-This project contains the source code for a custom API and Source Connector. 
-The RandomLong API has a single endpoint that provides a random Long value. 
-The Source Connector periodically calls the endpoint to produce the random Long value to a Kafka topic. 
+This project contains the source code for a custom Source Connector for Kafka Connect. 
+The Connector reads email messages from IMAP mailboxes, e.g., from Google Mail and writes the message metadata into a Kafka topic using the Avro format. 
+ 
+The Source Connector periodically polls new emails from the server to produce the new metadata records to a Kafka topic. 
+
+The purpose of this process is creation of corpus of communication meta data for analysis of communication patterns and cantitative statistics on message flows.
 
 ## Getting Started
 Clone repo:
 ```bash
-git clone git@github.com:enfuse/kafka-connect.git
+git clone https://github.com/semanpix/imap-kafka-connect-demo
 ```
 
 Compile and package docker image:
@@ -21,7 +24,7 @@ $ cd kafka-connect
 $ ./gradlew clean shadowJar
 ```
 
-* [Tutorial Blog Post](https://medium.com/enfuse-io/a-diy-guide-to-kafka-connectors-38ad7cd82e02)
+* [Tutorial Blog Post](https://medium.com/enfuse-io/collecting-email-metadata-for-statistical-analysis-of-business-communication) - WORK IN PROGRESS
 * [Use Google Kubernetes Engine](docs/gcloud-setup.md)
 * [Use Minikube On Local Machine](docs/minikube-setup.md)
 * [How to Install and Run a Custom Connector](docs/install-connector.md)
