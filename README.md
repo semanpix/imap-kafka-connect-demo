@@ -1,4 +1,4 @@
-# Example Kafka Source Connector
+# IMAP Kafka Source Connector
 This project contains the source code for a custom Source Connector for Kafka Connect. 
 The Connector reads email messages from IMAP mailboxes, e.g., from Google Mail and writes the message metadata into a Kafka topic using the Avro format. 
  
