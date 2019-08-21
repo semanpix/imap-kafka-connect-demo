@@ -11,12 +11,19 @@ Configure Local Docker Registry:
 ```bash
 $ gcloud auth configure-docker
 ```
+
+Login to public Image Repository:
+--
+```bash
+$ docker login --username=kamir
+```
+
 Tag The Docker Image:
 --
 ```bash
 # Grab the image id from this list
 $ docker images --all
-$ docker tag <image id> us.gcr.io/enfuse-gke/<image name to appear in google registry>
+$ docker tag <image id> org.semanpix/enfuse-gke/<image name to appear in google registry>
 ```
 
 Push To Registry:

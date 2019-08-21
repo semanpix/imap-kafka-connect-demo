@@ -25,7 +25,7 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 bootJar {
-    baseName = 'random-long-api'
+    baseName = 'random-mail-api'
     version = '0.0.1'
 }
 
@@ -42,6 +42,8 @@ docker {
 }
 
 dependencies {
+    implementation 'javax.mail:mail:1.4.1'
+    implementation 'javax.mail:javax.mail-api:1.5.3'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

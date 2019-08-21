@@ -1,4 +1,4 @@
-package io.enfuse.kafka.connect.api;
+package org.semanpix.kafka.connect.mail.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
