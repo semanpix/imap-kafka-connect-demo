@@ -1,9 +1,13 @@
 buildscript {
     repositories {
         maven {
-            url "https://plugins.gradle.org/m2/"
+            url "http://packages.confluent.io/maven/"
+        }
+        maven {
+            url "http://plugins.gradle.org/m2/"
         }
         mavenCentral()
+        mavenLocal()
     }
 
     dependencies {
@@ -20,12 +24,16 @@ plugins {
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
+apply plugin: "maven"
+
+group = "org.semanpix"
+version = "1.0"
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 bootJar {
-    baseName = 'random-mail-api'
+    baseName = 'imap-kafka-connector-api'
     version = '0.0.1'
 }
 
@@ -41,10 +49,57 @@ docker {
     buildArgs(['DEPENDENCY': "dependency"])
 }
 
+repositories {
+    maven {
+        url "http://packages.confluent.io/maven/"
+    }
+    maven {
+        url "http://plugins.gradle.org/m2/"
+    }
+    mavenCentral()
+}
+
+
 dependencies {
+
+    implementation group: 'semanpix.org', name: 'mail-pull-component', version: '1.0-SNAPSHOT'
+    
+// https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter
+    implementation group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '2.1.1'
+
+    // https://mvnrepository.com/artifact/io.confluent/common-config
+    implementation group: 'io.confluent', name: 'common-config', version: '5.3.0'
+
+    // https://mvnrepository.com/artifact/io.confluent/common-utils
+    implementation group: 'io.confluent', name: 'common-utils', version: '5.3.0'
+
+    // https://mvnrepository.com/artifact/io.confluent/kafka-schema-registry-client
+    implementation group: 'io.confluent', name: 'kafka-schema-registry-client', version: '5.3.0'
+
+    // https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer
+    implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.3.0'
+
+    implementation group: 'org.apache.avro', name: 'avro', version: '1.8.2'
+
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.3.0'
+
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
     implementation 'javax.mail:mail:1.4.1'
+
     implementation 'javax.mail:javax.mail-api:1.5.3'
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+
+    implementation ('org.springframework.boot:spring-boot-starter') {
+        exclude module : 'spring-boot-starter-logging'
+    }
+    implementation ('org.springframework.boot:spring-boot-starter-web') {
+        exclude module : 'spring-boot-starter-logging'
+    }
+
+    implementation ('org.springframework.boot:spring-boot-starter-data-rest' ) {
+        exclude module : 'spring-boot-starter-logging'
+    }
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }

@@ -1,8 +1,11 @@
 # IMAP Kafka Source Connector
 This project contains the source code for a custom Source Connector for Kafka Connect. 
-The Connector reads email messages from IMAP mailboxes, e.g., from Google Mail and writes the message metadata into a Kafka topic using the Avro format. 
+The Connector reads email messages from IMAP mailboxes, e.g., from Google Mail and writes 
+the message (initially only metadata) into a Kafka topic. The raw data is converted from MIMEMESSAGE 
+into Avro format. 
  
-The Source Connector periodically polls new emails from the server to produce the new metadata records to a Kafka topic. 
+The Source Connector periodically polls new emails from the server to produce the new metadata 
+records to a Kafka topic. 
 
 The purpose of this process is creation of corpus of communication meta data for analysis of communication patterns and cantitative statistics on message flows.
 

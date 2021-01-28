@@ -49,15 +49,13 @@ public class MailGeneratorController {
             InternetAddress b = new InternetAddress();
             b.setAddress("me@here.io");
             message.addRecipient( Message.RecipientType.TO, b );
-            message.setContent( "MailContent ... " + random.nextDouble(), "text/html;charset=utf-8");
+            message.setContent( "<h1>MailContent</h1><br>... " + random.nextDouble(), "text/html;charset=utf-8");
 
             // We serialize the message into a String using the built-in encoding
             //
             //    see also: https://stackoverflow.com/questions/17609046/how-to-serialize-a-mimemessage-instance
             //
             ByteArrayOutputStream result = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int length = 0;
 
             message.writeTo( result );
             mailData = result.toString("UTF-8");

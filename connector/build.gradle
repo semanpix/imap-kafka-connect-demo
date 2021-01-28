@@ -1,13 +1,21 @@
+
 plugins {
+
     id 'java'
     id 'com.github.johnrengelman.shadow' version '5.0.0'
+
 }
 
-version 'unspecified'
+version '0.0.1'
 
 sourceCompatibility = 1.8
 
 dependencies {
+
+    implementation group: 'semanpix.org', name: 'mail-pull-component', version: '1.0-SNAPSHOT'
+
     compile 'org.apache.kafka:connect-api:2.2.0'
+
     compile 'org.apache.httpcomponents:httpclient:4.5.8'
+
 }

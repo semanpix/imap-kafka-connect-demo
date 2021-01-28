@@ -1,0 +1,12 @@
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/cfg/MailBoxSetup.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/app/MailTransferApp.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/data/MMPojo.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/data/MM.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/cfg/ClusterSetup.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/kafka/AvroMMProducer.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/cfg/ProcessingRange.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/CheckIMAPMail.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/util/Timer.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/kafka/MMProducer.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/cfg/MessageBufferSetup.java
+/Users/mkampf/GITHUB.private/imap-kafka-connect/mpc/src/main/java/tool/cfg/MailTopicSetup.java

@@ -1,0 +1,15 @@
+util/Timer.class
+data/MMPojo.class
+kafka/Test.class
+tool/cfg/MessageBufferSetup.class
+kafka/MMProducer.class
+tool/CheckIMAPMail.class
+tool/cfg/ProcessingRange.class
+tool/cfg/ClusterSetup.class
+data/MM.class
+app/MailTransferApp.class
+tool/cfg/MailTopicSetup.class
+data/MMPojo$Builder.class
+data/MMPojo$1.class
+tool/cfg/MailBoxSetup.class
+kafka/AvroMMProducer.class

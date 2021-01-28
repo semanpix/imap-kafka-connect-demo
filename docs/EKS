@@ -1,0 +1,18 @@
+aws route53 create-hosted-zone --name "ekstest.kamir.com." --caller-reference "eks-test-$(date +%s)"
+aws route53 list-hosted-zones-by-name --output json --dns-name "ekstest.kamir.com." | jq -r '.HostedZones[0].Id'
+aws route53 list-resource-record-sets --output json --hosted-zone-id "/hostedzone/<VALUE_FROM_ABOVE>" \
+    --query "ResourceRecordSets[?Type == 'NS']" | jq -r '.[0].ResourceRecords[].Value'
+
+
+eksctl create cluster \
+--name kamir-eks-test \
+--version 1.12 \
+--nodegroup-name standard-workers \
+--node-type m5.xlarge \
+--nodes 6 \
+--nodes-min 4 \
+--nodes-max 6 \
+--region us-west-2 \
+--zones us-west-2a,us-west-2b,us-west-2c \
+--node-ami auto \
+--external-dns-access

@@ -3,7 +3,9 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
+
 rootProject.name = 'imap-kafka-connect'
+
 include 'api'
 include 'connector'
 

@@ -4,6 +4,7 @@ subprojects {
 	apply plugin: "idea"
 	repositories {
 		jcenter()
+		mavenLocal()
 	}
 }
 
